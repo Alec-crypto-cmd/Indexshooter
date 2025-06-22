@@ -1,18 +1,42 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>FPS Game</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Minimal FPS Game</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; overflow: hidden; background: #222; color: #eee; font-family: sans-serif;
+      user-select: none;
+    }
+    #menu {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    #game {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      background: #444;
+      cursor: crosshair;
+    }
+    button, input {
+      padding: 10px; margin: 5px; font-size: 1.2rem;
+      border-radius: 5px; border: none;
+    }
+    button:hover {
+      background: #666; color: white; cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <div id="menu">
-    <input id="name" placeholder="Name">
-    <input id="room" placeholder="4‑stelliger Code" maxlength="4">
-    <button id="play">Play</button>
+    <input id="name" placeholder="Name" autocomplete="off" /><br />
+    <input id="room" placeholder="4-stelliger Raumcode" maxlength="4" autocomplete="off" /><br />
+    <button id="playBtn">Play</button>
   </div>
   <canvas id="game"></canvas>
-  <script src="main.js"></script>
+
+  <script type="module" src="main.js"></script>
 </body>
 </html>
