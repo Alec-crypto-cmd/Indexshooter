@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FPS Game 3D Map Debug Version</title>
+  <title>FPS Game 3D Map (Classic)</title>
   <style>
     body { margin: 0; overflow: hidden; background: #111; }
     #info {
@@ -24,10 +24,12 @@
   <div id="info">WASD = bewegen, Maus = schauen, Button = Pointer Lock</div>
   <button id="startBtn">Pointer Lock aktivieren</button>
 
-  <script type="module">
-    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
-    import { PointerLockControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/PointerLockControls.js';
+  <!-- Three.js Classic Script -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <!-- PointerLockControls Classic Script -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/PointerLockControls.js"></script>
 
+  <script>
     // Szene, Kamera, Renderer
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x111111);
@@ -67,7 +69,7 @@
     createBuilding(5, 5, 0x66cc66);
 
     // Controls
-    const controls = new PointerLockControls(camera, document.body);
+    const controls = new THREE.PointerLockControls(camera, document.body);
 
     const startBtn = document.getElementById('startBtn');
     startBtn.addEventListener('click', () => {
